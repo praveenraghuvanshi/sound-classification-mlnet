@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="assets\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.7.1" />
+    <PackageReference Include="Microsoft.ML.ImageAnalytics" Version="1.7.1" />
+    <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.11.0" />
+    <PackageReference Include="Microsoft.ML.OnnxTransformer" Version="1.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="assets\SoundClassifier.onnx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

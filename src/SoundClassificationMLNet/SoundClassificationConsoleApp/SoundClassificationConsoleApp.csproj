@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\soundclassification\SoundClassification.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="testdata\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="testdata\classical00095.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
