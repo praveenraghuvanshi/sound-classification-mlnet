@@ -5,7 +5,9 @@ namespace SoundClassificationConsoleApp
 {
     class Program
     {
-        private static string testImage = @"testdata\classical00095.png";
+        // private static string testImage = @"testdata\classical\classical00095.png"; // classical
+        private static string testImage = @"testdata\hiphop\hiphop00095.png"; // hip-hop
+
 
         static void Main(string[] args)
         {
@@ -19,7 +21,7 @@ namespace SoundClassificationConsoleApp
             Classification classification = new Classification();
             var sound = classification.Classify(testImage);
 
-            Console.WriteLine($"Predicted sound is of {sound}");
+            Console.WriteLine($"Predicted Genre: {sound}");
         }
     }
 }

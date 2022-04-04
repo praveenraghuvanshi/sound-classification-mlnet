@@ -10,11 +10,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="testdata\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="testdata\classical00095.png">
+    <None Update="testdata\classical\classical00095.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\hiphop\hiphop00095.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

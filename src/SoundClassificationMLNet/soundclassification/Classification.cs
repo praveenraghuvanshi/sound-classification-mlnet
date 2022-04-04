@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using Microsoft.ML;
 using Microsoft.ML.Transforms.Image;
@@ -10,11 +11,22 @@ namespace SoundClassification
     {
         private string MODEL_INPUT_NAME = "modelInput";
         private string MODEL_OUTPUT_NAME = "modelOutput";
-        private string MODEL_FILE = @"assets\SoundClassifier.onnx";
+        private string ASSETS_FOLDER = "assets";
+        private string MODEL_FILE_NAME = "SoundClassifier.onnx";
+        private string LABEL_FILE_NAME = "labels.txt";
 
-        private string[] CLASSES = { "blues", "classical", "country", "disco", "hiphop", "jazz", "metal", "pop", "reggae", "rock" };
+        private string _assetsLocation;
+        private string _modelFile;
+        private List<string> _classes;
 
-        public string Classify(string spectrogramImage)
+        public Classification()
+        {
+            _assetsLocation = Path.Combine(Directory.GetCurrentDirectory(), ASSETS_FOLDER);
+            _modelFile = Path.Combine(_assetsLocation, MODEL_FILE_NAME);
+            _classes = File.ReadLines(Path.Combine(_assetsLocation, LABEL_FILE_NAME)).ToList();
+        }
+
+    public string Classify(string spectrogramImage)
         {
             var mlContext = new MLContext(seed: 1);
             var model = BuildModel(mlContext);
@@ -24,7 +36,7 @@ namespace SoundClassification
             var maxScore = predictedOutput.Score.Max();
             var maxIndex = predictedOutput.Score.ToList().IndexOf(maxScore);
 
-            var classifiedSound = CLASSES[maxIndex];
+            var classifiedSound = _classes[maxIndex];
 
             return classifiedSound;
         }
@@ -43,7 +55,7 @@ namespace SoundClassification
 
             var pipeline = mlContext.Transforms.ResizeImages(resizing: ImageResizingEstimator.ResizingKind.Fill, outputColumnName: MODEL_INPUT_NAME, imageWidth: ImageSettings.Width, imageHeight: ImageSettings.Height, inputColumnName: nameof(ModelInput.ImageSource))
                 .Append(mlContext.Transforms.ExtractPixels(outputColumnName: MODEL_INPUT_NAME))
-                .Append(mlContext.Transforms.ApplyOnnxModel(modelFile: MODEL_FILE, outputColumnName: MODEL_OUTPUT_NAME, inputColumnName: MODEL_INPUT_NAME));
+                .Append(mlContext.Transforms.ApplyOnnxModel(modelFile: _modelFile, outputColumnName: MODEL_OUTPUT_NAME, inputColumnName: MODEL_INPUT_NAME));
 
             var model = pipeline.Fit(data);
 
