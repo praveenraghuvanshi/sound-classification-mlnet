@@ -10,12 +10,28 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="testdata\audio\classical\classical.00095.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\audio\hiphop\hiphop.00095.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="testdata\classical\classical00095.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="testdata\hiphop\hiphop00095.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="testdata\images\classical\classical00095.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\images\hiphop\hiphop00095.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="testdata\audio\classical\" />
   </ItemGroup>
 
 </Project>
