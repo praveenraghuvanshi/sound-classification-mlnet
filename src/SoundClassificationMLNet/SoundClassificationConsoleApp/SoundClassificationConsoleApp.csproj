@@ -6,7 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\soundclassification\SoundClassification.csproj" />
+    <ProjectReference Include="..\SoundClassificationWithPreTrainedModel\SoundClassificationWithPreTrainedModel.csproj" />
+    <ProjectReference Include="..\soundclassification\SoundClassificationWithTraining.csproj" />
   </ItemGroup>
 
   <ItemGroup>

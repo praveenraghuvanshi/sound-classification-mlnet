@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using SoundClassification;
+using SoundClassificationWithPreTrainedModel;
+
 
 namespace SoundClassificationConsoleApp
 {
