@@ -1,17 +1,10 @@
-# sound-classification-mlnet
-Sound Classification using ML.Net
+# Sound Classification using ML.Net
 
-## Pakages
+Let's explore how a sound is classified through Machine Learning using ML.Net framework
 
-- NAudio
-- Spectrogram.Net
+Please refer [Sound Clasification Notebook](SoundClassification.ipynb) for detailed steps
 
-## TO DO
+## Resources
 
-- [x] Read audio file
-- [ ] Transform audio file
-  - [ ] Same length(4 secs)
-  - [ ] Channel
-  - [ ] sample rate
-- [x] transform to an image
-- [x] Consume in ML.Net prediction code
+- [Notebook](SoundClassification.ipynb)
+- [Source Code](src)
