@@ -6,6 +6,6 @@ namespace SoundClassificationWithCustomModel
     public class ModelInput
     {
         [ImageType(ImageSettings.Height, ImageSettings.Width)]
-        public Image ImageSource { get; set; }
+        public Bitmap ImageSource { get; set; }
     }
 }

@@ -73,7 +73,7 @@ namespace SoundClassificationWithCustomModel
 
         private ModelInput BuildInput(string inputImage)
         {
-            var testImage = Image.FromFile(inputImage);
+            var testImage = (Bitmap)Image.FromFile(inputImage);
 
             ModelInput inputData = new ModelInput
             {
