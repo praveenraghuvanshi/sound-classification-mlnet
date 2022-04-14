@@ -3,11 +3,12 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SoundClassificationWithPreTrainedModel\SoundClassificationWithPreTrainedModel.csproj" />
-    <ProjectReference Include="..\soundclassification\SoundClassificationWithTraining.csproj" />
+    <ProjectReference Include="..\SoundClassificationWithCustomModel\SoundClassificationWithCustomModel.csproj" />
+    <ProjectReference Include="..\SoundClassificationWithTransferLearning\SoundClassificationWithTransferLearning.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using SoundClassificationWithPreTrainedModel;
 
 
 namespace SoundClassificationConsoleApp
@@ -26,7 +25,13 @@ namespace SoundClassificationConsoleApp
 
             var fileToBeClassified = testImage;
 
-            var classification = new Classification();
+            // Custom Model
+            var classification = new SoundClassificationWithCustomModel.Classification();
+
+            // Transfer Learning
+            // var classification = new SoundClassificationWithTransferLearning.Classification();
+            // classification.TrainAndEvaluate();
+
             var stopWatch = Stopwatch.StartNew();
 
             // Classification using Image file
