@@ -24,4 +24,5 @@ Let's explore how a sound is classified through Machine Learning using ML.Net fr
 
 - [Notebook](SoundClassification.ipynb)
 - [Source Code](src)
+- [GTZAN Dataset - Music Genre Classification](https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification?resource=download)
 
